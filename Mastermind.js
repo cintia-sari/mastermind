@@ -19,10 +19,10 @@ function readGuess(){
         tipsArrayNum =tipsArray.map(Number);
 
         if (tipsArrayNum.length !== 4 ){
-            console.log(`Too much caracters!`)
+            alert(`Too much caracters!`)
         }
         else if (tipsArrayNum.some(isNaN)){
-            console.log(`Only numbers type here!`)
+            alert(`Only numbers type here!`)
         }
         
         }while (tipsArrayNum.length !== 4 || tipsArrayNum.some(isNaN));
@@ -99,9 +99,9 @@ function returnResult(blackCount,whiteCount,guess,i){
  */
 function getFinalResult(GameWon){
     if (GameWon === true) {
-        console.log( "You Failed.")
+        alert( "You Failed.")
     }
-    else { console.log("Congrat. You Win!")}
+    else { alert("Congrat. You Win!")}
 }
 
 
@@ -128,7 +128,7 @@ function gameLoop() {
     let whiteCount = getWhiteCount(guess,secret,blackCount);
     var result = returnResult(blackCount,whiteCount,guess,i);
         GameWon = isGameWon(blackCount);
-        console.log(GameWon)
+        ////alert(GameWon)
         i = i+1; 
     } ;
     
