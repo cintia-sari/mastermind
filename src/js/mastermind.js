@@ -1,8 +1,7 @@
- 
 /** Generate the secret four digits element.
  * @return Array of '0'....'9'- the secret four digits element. ,
  */
- function generateNumber(){
+function generateNumber(){
     return new Array(4).fill(null).map(()=>Math.trunc(Math.random()*10.0))
 }
 
@@ -85,7 +84,6 @@ function isGameWon(blackCount){
  * @i : which round is it at?
  * 
  * @return : give back the present situation
-
   */
 
 function returnResult(blackCount,whiteCount,guess,i){
@@ -136,4 +134,3 @@ function gameLoop() {
     getNewGame();
     
    }
-   
