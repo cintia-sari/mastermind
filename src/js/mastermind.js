@@ -1,3 +1,5 @@
+let start= false; 
+
 /** Generate the secret four digits element.
  * @return Array of '0'....'9'- the secret four digits element. ,
  */
@@ -105,20 +107,30 @@ function getFinalResult(GameWon){
 
 /**the players decide what they wants to play. */
 function getNewGame(){
-    let question = prompt("would you like to play? y / n");
-    return ( question ==="y" ? gameLoop() : "Thank You." );
-}
+
+    document.querySelector(".start-btn").style.visibility = "visible";
+
+
+    
+    document.querySelector(".js-start-btn").addEventListener("click", function(){
+        start = true
+        if (start) {
+            gameLoop();
+        }
+       });
+    };
 
 
 
 let newGame = getNewGame();
 
 function gameLoop() {
-    
+    document.querySelector(".start-btn").style.visibility = "hidden";
+
     let secret = generateNumber();
     let GameWon = true;
     i=0;
-
+    
     while (GameWon && i != 13) {
     
     let guess = readGuess();
