@@ -1,4 +1,22 @@
+const ROWS = 10;
+const COLUMNS = 4
+
 let start= false; 
+let guesses =[];
+let currentColorPosition = null;
+let currentColumnPosition = null;
+let tipsArrayNum;
+let blackCandidates = 0;
+let whiteCandidates = 0;
+let secret= null ;
+let GameWon = false;
+let guess = null;
+let blackCount = null ;
+let whiteCount = null ;
+let finalResult ;
+
+
+
 
 /** Generate the secret four digits element.
  * @return Array of '0'....'9'- the secret four digits element. ,
@@ -13,7 +31,6 @@ function generateNumber(){
  */
 
 function readGuess(){
-    let tipsArrayNum;
     do {
         let tips= prompt('Give your tips!');
         let tipsArray = Array.from(tips);
@@ -38,7 +55,7 @@ function readGuess(){
  * @return : give back the good answer.
 */
 function getBlackCount(guess,secret){
-    var blackCandidates = 0;
+    
     for (let i in secret) {
         if (guess[i] === secret[i]) {
             blackCandidates += 1;
@@ -56,7 +73,7 @@ function getBlackCount(guess,secret){
 */
 
     function getWhiteCount(guess, secret, blackCount) {
-        let whiteCandidates = 0;
+        
       
         for (let number of guess) {
             if (secret.includes(number)) {
@@ -127,22 +144,22 @@ let newGame = getNewGame();
 function gameLoop() {
     document.querySelector(".start-btn").style.visibility = "hidden";
 
-    let secret = generateNumber();
-    let GameWon = true;
+    secret = generateNumber();
+    GameWon = true;
     i=0;
     
     while (GameWon && i != 13) {
     
-    let guess = readGuess();
-    let blackCount = getBlackCount(guess,secret);
-    let whiteCount = getWhiteCount(guess,secret,blackCount);
-    var result = returnResult(blackCount,whiteCount,guess,i);
+    guess = readGuess();
+    blackCount = getBlackCount(guess,secret);
+    whiteCount = getWhiteCount(guess,secret,blackCount);
+    result = returnResult(blackCount,whiteCount,guess,i);
         GameWon = isGameWon(blackCount);
         ////alert(GameWon)
         i = i+1; 
     } ;
     
-    let finalResult = getFinalResult(GameWon);
+    finalResult = getFinalResult(GameWon);
     getNewGame();
     
    }
