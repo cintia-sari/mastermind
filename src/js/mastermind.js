@@ -25,6 +25,15 @@ function generateNumber(){
     return new Array(4).fill(null).map(()=>Math.trunc(Math.random()*10.0))
 }
 
+function initializeData() {
+    guesses = [];
+    for (let i = 0 ; i < ROWS; i +=1){
+        guesses.push([null, null, null, null]);
+    }
+    currentColorPosition = null;
+    currentColumnPosition = null;
+}
+
 /**The player give it the tips if the caracter too much or not a number the while cycle repeat asks for the tips. 
  * 
  *  @return Array of '0'....'9'- the player tips.
