@@ -68,3 +68,14 @@ main {
     width: 70px;
    bottom: 20px;
 }
+
+.row {
+    margin: 1rem;
+    font-size: 2.5rem;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: lightgrey;
+    background-color: black;
+  }
