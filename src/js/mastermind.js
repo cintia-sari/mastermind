@@ -1,5 +1,5 @@
-const numberTip = document.querySelector(".js-number-tip");
-
+const numberTip = document.querySelector("#tip");
+const list = document.querySelector(".js-list")
 
 let start= false; 
 let guesses =[];
@@ -15,7 +15,10 @@ let blackCount = null ;
 let whiteCount = null ;
 let finalResult ;
 
-
+document.querySelector(".validate-btn").addEventListener("click", (event)=>{
+    event.preventDefault();
+    list.innerHTML +="keresés....";
+})
 
 
 /** Generate the secret four digits element.
