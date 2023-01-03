@@ -1,9 +1,9 @@
-const ROWS = 10;
-const COLUMNS = 4
+const numberTip = document.querySelector(".js-number-tip");
+
 
 let start= false; 
 let guesses =[];
-let currentColorPosition = null;
+let currentNumberPosition = null;
 let currentColumnPosition = null;
 let tipsArrayNum;
 let blackCandidates = 0;
@@ -30,7 +30,7 @@ function initializeData() {
     for (let i = 0 ; i < ROWS; i +=1){
         guesses.push([null, null, null, null]);
     }
-    currentColorPosition = null;
+    currentNumberPosition = null;
     currentColumnPosition = null;
 }
 
@@ -38,6 +38,10 @@ function initializeData() {
  * 
  *  @return Array of '0'....'9'- the player tips.
  */
+
+function tipsHtml(){
+
+}
 
 function readGuess(){
     do {
